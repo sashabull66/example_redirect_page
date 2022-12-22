@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirect page</title>
+</head>
+<body>
+<script>
+        window.addEventListener('load', _ => {
+            const currentUrl = new URL(window.location.href);
+            const redirectUrl = currentUrl.searchParams.get('redirect_uri');
+
+            if (redirectUrl) window.location.replace(redirectUrl.toString());
+        })
+</script>
+</body>
+</html>

@@ -11,7 +11,7 @@
             const redirectUrl = currentUrl.searchParams.get('redirect_uri');
 
             if (redirectUrl) {
-                if (redirectUrl.includes('web-test.moscow.alfaintra.net')) {
+                if (redirectUrl.startsWith('https://alfabank.ru/')) {
                     window.location.replace(redirectUrl.toString());
                 }
             }

@@ -6,11 +6,15 @@
 </head>
 <body>
 <script>
-        window.addEventListener('load', _ => {
+        window.addEventListener('load', () => {
             const currentUrl = new URL(window.location.href);
             const redirectUrl = currentUrl.searchParams.get('redirect_uri');
 
-            if (redirectUrl) window.location.replace(redirectUrl.toString());
+            if (redirectUrl) {
+                if (redirectUrl.includes('web-test.moscow.alfaintra.net')) {
+                    window.location.replace(redirectUrl.toString());
+                }
+            }
         })
 </script>
 </body>

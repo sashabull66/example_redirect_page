@@ -6,23 +6,14 @@
 </head>
 <body>
 <script>
-    window.addEventListener('load', _ =>
-    {
-        let urlTemplate = "https://web.alfabank.ru/";
-        const currentUrl = new URL(window.location.href);
-        const redirectUrl = currentUrl.searchParams.get('redirect_uri');
-        if (redirectUrl) {
-            if (urlTemplate.startsWith("http")) {
-                if (redirectUrl.startsWith(urlTemplate)) {
+        window.addEventListener('load', () => {
+            const currentUrl = new URL(window.location.href);
+            const redirectUrl = currentUrl.searchParams.get('redirect_uri');
+
+            if (redirectUrl) {
                     window.location.replace(redirectUrl.toString());
-                }
-            } else {
-                if (redirectUrl.includes(urlTemplate)) {
-                    window.location.replace(redirectUrl.toString());
-                }
             }
-        }
-    })
+        })
 </script>
 </body>
 </html>
